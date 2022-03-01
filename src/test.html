@@ -1,0 +1,55 @@
+<html>
+<head></head>    
+<body>
+    <div style="min-height: 1300px;"></div>
+</body>
+    <script type="text/javascript">
+    function debounce(fn,delay){
+    //
+    let timer = null;
+    return function(...args){
+        if(timer){
+            clearTimeout(timer);
+        }
+        timer = setTimeout(() => {
+            fn.apply(this,args);
+        }, delay);
+    }
+}
+function test(){
+    console.log('haha');
+}
+const debounce1 = debounce(test,1000)
+// window.addEventListener('scroll',debounce1);
+
+
+
+
+
+function throttle(fn,delay){
+    let lasttime = 0;
+    return function(...args){
+        let now = Date.now();
+        if((now - lasttime)>delay){
+            fn.apply(this,args);
+            lasttime = now;
+        }
+    }
+}
+function testthrottle(){
+    console.log('heihei');
+}
+const throttle1 = throttle(testthrottle,5000);
+window.addEventListener('scroll',throttle1);
+
+
+function deepclone(obj,cache = new WeakMap()){
+
+}
+
+
+
+
+
+    </script>
+</html>
