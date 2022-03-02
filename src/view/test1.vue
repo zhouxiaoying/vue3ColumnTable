@@ -193,6 +193,7 @@ export default {
     <el-aside width="200px">Aside</el-aside>
     <el-main>
       <el-button type="text" @click="dialogVisible = true">设置列</el-button>
+      <el-button type="text" @click="$router.push({name:'table12'})">跳转路由</el-button>
 
       <GZTableTransfer
         :dialogVisible="dialogVisible"

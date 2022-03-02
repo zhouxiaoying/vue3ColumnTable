@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
+import NotFound from '@/components/NotFound.vue'
 const routes = [
     {
         path: "/",
@@ -14,7 +15,19 @@ const routes = [
         path: "/testtable",
         name: "table",
         component:  () => import('@/view/testtable1122.vue'),
-    }
+    },
+    {
+        path: "/test2",
+        name: "test2",
+        component:  () => import('@/view/test2.vue'),
+    },
+    {
+        path: "/test3",
+        name: "test3",
+        component:  () => import('@/view/test3.vue'),
+    },
+    { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },
+    // { path: '*', name: 'not-found', component: NotFound },  //报错   提示必须用正则表达式定义
 ];
 const Router = createRouter({
     history: createWebHashHistory(),
