@@ -82,15 +82,15 @@ export default {
       return Math.min(this.listData.length - this.end,this.bufferScale * this.visibleCount);
     },
     visibleCount() {
+      return Math.ceil(this.screenHeight / this.estimatedItemSize);
+    },
+    visibleData() {
       //开始index减去  缓冲区的个数
        let start = this.start - this.aboveCount;
        //结束index加上 缓冲区的个数
       let end = this.end + this.belowCount;
       return this._listData.slice(start, end);
-      // return Math.ceil(this.screenHeight / this.estimatedItemSize);
-    },
-    visibleData() {
-      return this._listData.slice(this.start, this.end);
+      // return this._listData.slice(this.start, this.end);
     }
   },
   //生命周期 - 创建完成（访问当前this实例）
