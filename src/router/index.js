@@ -26,6 +26,11 @@ const routes = [
         name: "test3",
         component:  () => import('@/view/test3.vue'),
     },
+    {
+        path: "/testVirtualList2",
+        name: "testVirtualList2",
+        component:  () => import('@/view/testVirtualList2.vue'),
+    },
     { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },
     // { path: '*', name: 'not-found', component: NotFound },  //报错   提示必须用正则表达式定义
 ];
